@@ -14,14 +14,12 @@ export const getChars = () => dispatch => {
     .then(res => {
         dispatch({ 
             type: FETCH_CHARS_SUCCESS, 
-            payload: res.data})
+            payload: res.data.results})
     })
     .catch(err => {
-        dispatch({
-            type: FETCH_CHARS_FAILURE,
-            payload: err.response.data.error.message
+       console.log(err)
         })
-    })
+    
 }
 
 // our action creator will be a function that returns a function
